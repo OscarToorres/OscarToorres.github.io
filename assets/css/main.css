@@ -3999,25 +3999,25 @@ input, select, textarea {
 
 			}
 
-		#main > .posts {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
-			-moz-flex-wrap: wrap;
-			-webkit-flex-wrap: wrap;
-			-ms-flex-wrap: wrap;
-			flex-wrap: wrap;
-			-moz-align-items: -moz-stretch;
-			-webkit-align-items: -webkit-stretch;
-			-ms-align-items: -ms-stretch;
-			align-items: stretch;
-			text-align: center;
-			width: 100%;
-			padding: 0;
-		}
-
-			#main > .posts > * {
+			#main > .posts {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-flex-wrap: wrap;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-moz-align-items: -moz-stretch;
+				-webkit-align-items: -webkit-stretch;
+				-ms-align-items: -ms-stretch;
+				align-items: stretch;
+				text-align: center;
+				width: 100%;
+				padding: 0;
+			  }
+			  
+			  #main > .posts > * {
 				-moz-flex-shrink: 1;
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
@@ -4026,84 +4026,89 @@ input, select, textarea {
 				-webkit-flex-grow: 0;
 				-ms-flex-grow: 0;
 				flex-grow: 0;
-			}
-
-			#main > .posts > * {
 				width: 50%;
-			}
-
-			#main > .posts > * {
 				padding: 4rem;
-				width: 50%;
-			}
-
-			#main > .posts > article {
+				box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+			  }
+			  
+			  #main > .posts > article {
 				border-color: #eeeeee;
 				border-left-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
 				text-align: center;
-			}
-
-				#main > .posts > article > :last-child {
-					margin-bottom: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			  }
+			  
+			  #main > .posts > article > :last-child {
+				margin-bottom: 0;
+			  }
+			  
+			  #main > .posts > article:nth-child(2n - 1) {
+				border-left-width: 0;
+			  }
+			  
+			  #main > .posts > article:nth-child(-n + 2) {
+				border-top-width: 0;
+			  }
+			  
+			  #main > .posts .image.fit {
+				display: block;
+				margin: 0 auto 20px auto; /* Centrar y agregar espacio inferior */
+				max-width: 100%;
+				height: auto;
+			  }
+			  
+			  #main > .posts .image.fit img {
+				border-radius: 15px; /* Bordes redondeados */
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+				transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+				width: 100%;
+				height: auto; /* Mantener la proporción de la imagen */
+			  }
+			  
+			  #main > .posts .image.fit img:hover {
+				transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el cursor */
+			  }
+			  
+			  @media screen and (max-width: 980px) {
+				#main > .posts > * {
+				  width: 50%;
+				  padding: 2.5rem;
 				}
-
+			  }
+			  
+			  @media screen and (max-width: 736px) {
+				#main > .posts > * {
+				  width: 100%;
+				  padding: 2rem;
+				}
+			  
 				#main > .posts > article:nth-child(2n - 1) {
-					border-left-width: 0;
+				  border-left-width: 2px;
 				}
-
+			  
 				#main > .posts > article:nth-child(-n + 2) {
-					border-top-width: 0;
+				  border-top-width: 2px;
 				}
-
-			@media screen and (max-width: 980px) {
-
-				#main > .posts > * {
-					width: 50%;
-				}
-
-				#main > .posts > * {
-					padding: 2.5rem;
-					width: 50%;
-				}
-
-			}
-
-			@media screen and (max-width: 736px) {
-
-				#main > .posts > * {
-					width: 100%;
-				}
-
-				#main > .posts > * {
-					padding: 2rem;
-					width: 100%;
-				}
-
-				#main > .posts > article:nth-child(2n - 1) {
-					border-left-width: 2px;
-				}
-
-				#main > .posts > article:nth-child(-n + 2) {
-					border-top-width: 2px;
-				}
-
+			  
 				#main > .posts > article:nth-child(n) {
-					border-left-width: 0;
+				  border-left-width: 0;
 				}
-
+			  
 				#main > .posts > article:nth-child(-n + 1) {
-					border-top-width: 0;
+				  border-top-width: 0;
 				}
-
+			  
 				#main > .posts > article .image {
-					max-width: 25rem;
-					margin-left: auto;
-					margin-right: auto;
+				  max-width: 25rem;
+				  margin-left: auto;
+				  margin-right: auto;
 				}
-
-			}
+			  }
 
 		@media screen and (max-width: 736px) {
 
